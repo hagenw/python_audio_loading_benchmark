@@ -11,6 +11,7 @@ import torchaudio
 import numpy as np
 import tensorflow as tf
 import librosa
+import audeer.wav
 
 """
 Some of the code taken from: 
@@ -106,6 +107,11 @@ def load_librosa(fp):
     """
     # loading with `sr=None` is disabling the internal resampling
     sig, rate = librosa.load(fp, sr=None)
+    return sig
+
+
+def load_audeer(fp):
+    sig, rate = audeer.wav.read(fp)
     return sig
 
 

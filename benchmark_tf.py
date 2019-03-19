@@ -56,6 +56,7 @@ if __name__ == "__main__":
         'scipy',
         'scipy_mmap',
         'tf_decode'
+        'audeer',
     ]
 
     for lib in libs:
