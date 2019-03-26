@@ -68,7 +68,8 @@ if __name__ == "__main__":
         'soundfile', 
         'librosa', 
         'scipy',
-        'scipy_mmap'
+        'scipy_mmap',
+        'audiofile',
     ]
 
     for lib in libs:

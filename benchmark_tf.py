@@ -55,7 +55,8 @@ if __name__ == "__main__":
         'librosa',
         'scipy',
         'scipy_mmap',
-        'tf_decode'
+        'tf_decode',
+        'audiofile',
     ]
 
     for lib in libs:

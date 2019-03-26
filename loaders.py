@@ -5,6 +5,7 @@ import audioread.maddec
 import audioread.ffdec
 import matplotlib.pyplot as plt
 import soundfile as sf
+import audiofile as af
 import aubio
 from pydub import AudioSegment
 import torchaudio
@@ -110,6 +111,11 @@ def load_librosa(fp):
     return sig
 
 
+def load_audiofile(fp):
+    sig, rate = af.read(fp)
+    return sig
+
+
 def _convert_buffer_to_float(buf, n_bytes=2, dtype=np.float32):
     # taken from librosa.util.utils
     # Invert the scale of the data
@@ -188,4 +194,13 @@ def info_torchaudio(fp):
     info['channels'] = f.channels
     f, _ = torchaudio.info(fp)
     info['sampling_rate'] = f.rate
+    return info
+
+
+def info_audiofile(fp):
+    info = {}
+    info['duration'] = af.duration(fp)
+    info['samples'] = af.samples(fp)
+    info['channels'] = af.channels
+    info['sampling_rate'] = af.sampling_rate
     return info

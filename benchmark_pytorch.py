@@ -72,6 +72,7 @@ if __name__ == "__main__":
         'librosa', 
         'scipy',
         'scipy_mmap',
+        'audiofile',
     ]
 
     if args.ext != "mp4":

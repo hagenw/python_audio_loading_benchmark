@@ -61,6 +61,7 @@ if __name__ == "__main__":
         'soundfile',
         'sox',
         'audioread',
+        'audiofile',
         # 'pydub',  # too slow
     ]
 
